@@ -1,0 +1,23 @@
+{
+  "name": "kelp-cookie",
+  "version": "0.0.1",
+  "description": "cookie parser for kelp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/kelp-cookie.git"
+  },
+  "keywords": [
+    "kelp",
+    "cookie"
+  ],
+  "author": "lsong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/song940/kelp-cookie/issues"
+  },
+  "homepage": "https://github.com/song940/kelp-cookie#readme"
+}
