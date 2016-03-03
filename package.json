@@ -1,6 +1,6 @@
 {
   "name": "kelp-cookie",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "cookie parser for kelp",
   "main": "index.js",
   "scripts": {

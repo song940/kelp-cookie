@@ -4,17 +4,24 @@ cookie parser for kelp
 
 ### Installation
 ````
-$ [sudo] npm install kelp-cookie
+$ npm install kelp-cookie --save
 ````
 
 
 ### Example
 ````javascript
-var kelp-cookie = require('kelp-cookie');
+const kelp   = require('kelp');
+const cookie = require('kelp-cookie');
+
+const app = kelp();
+
+app.use(cookie());
+
+app.use(function(req, res){
+  console.log(req.cookies);
+  res.cookie('name', 'value', { path: '/' });
+});
 ````
-
-### API
-
 
 ### Contributing
 - Fork this repo
@@ -47,5 +54,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
-![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
-built upon love by [docor](https://github.com/turingou/docor.git) v0.1.3
