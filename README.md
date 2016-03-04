@@ -6,8 +6,6 @@ cookie parser for kelp
 ````
 $ npm install kelp-cookie --save
 ````
-
-
 ### Example
 ````javascript
 const kelp   = require('kelp');
@@ -20,6 +18,7 @@ app.use(cookie());
 app.use(function(req, res){
   console.log(req.cookies);
   res.cookie('name', 'value', { path: '/' });
+  res.end();
 });
 ````
 

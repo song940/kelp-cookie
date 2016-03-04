@@ -8,7 +8,10 @@ module.exports = function(options){
   return function(req, res, next){
     //
     req.cookies = {};
-    (req.headers[ 'cookie' ] || '').split(';').map(function(cookie){
+    (req.headers[ 'cookie' ] || '').split(';')
+    .filter(function(cookie){
+      return !!cookie;
+    }).map(function(cookie){
       return cookie.split('=');
     }).forEach(function(cookie){
       req.cookies[ cookie[0] ] = cookie[1];
