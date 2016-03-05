@@ -3,17 +3,20 @@
 cookie parser for kelp
 
 ### Installation
+
 ````
 $ npm install kelp-cookie --save
 ````
+
 ### Example
+
 ````javascript
 const kelp   = require('kelp');
 const cookie = require('kelp-cookie');
 
 const app = kelp();
 
-app.use(cookie());
+app.use(cookie);
 
 app.use(function(req, res){
   console.log(req.cookies);
