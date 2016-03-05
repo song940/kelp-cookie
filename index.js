@@ -8,13 +8,8 @@ var Cookie = require('./lib/cookie');
 module.exports = function(req, res, next){
   // cookie getter
   req.cookies = {};
-  (req.headers[ 'cookie' ] || '').split(';')
-  .filter(function(cookie){
-    return !!cookie;
-  }).map(function(cookie){
-    return cookie.split('=');
-  }).forEach(function(cookie){
-    req.cookies[ cookie[0] ] = cookie[1];
+  (req.headers[ 'cookie' ] || '').replace(/(.*?)=(.*?)($|;|,)\s?/g, function(_, name, value){
+    req.cookies[ unescape(name) ] = unescape(value);
   });
   /**
    * [function cookie setter]
