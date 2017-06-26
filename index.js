@@ -1,4 +1,4 @@
-var Cookie = require('./lib/cookie');
+const Cookie = require('./lib/cookie');
 /**
  * [function cookie]
  * @param  {[type]}   req  [request]
@@ -19,6 +19,8 @@ module.exports = function(req, res, next){
    * @return {[type]}       [description]
    */
   res.cookie = function(key, value, attrs){
+    attrs = attrs || {};
+    if(value === null) { attrs.expires = new Date(0); value = ''; }
     res.setHeader('Set-Cookie', Cookie(key, value, attrs).toHeader());
   };
   next();
