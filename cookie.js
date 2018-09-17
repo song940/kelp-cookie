@@ -46,4 +46,13 @@ Cookie.prototype.toHeader = function() {
   return header;
 };
 
+Cookie.parse = function(str){
+  const cookies = {};
+  if(!str) return cookies;
+  str.replace(/(.*?)=(.*?)($|;)\s?/g, function(_, name, value){
+    cookies[ unescape(name) ] = unescape(value);
+  });
+  return cookies;
+}
+
 module.exports = Cookie;
